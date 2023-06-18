@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section>
+
+    <div class="login-page">
+        <div class="form" id="frm">
+            <h1 class="login-header"> Login Form</h1>
+            <div th:if="${param.error}" class="alert alert-danger"> Invalid username and password</div>
+            <div th:if="${param.logout}" class="alert alert-success">You have logged out</div>
+            <form class="login-form" th:action="@{/dologin}" action="#" method="post">
+                <input type="text" name="username" placeholder="username"/>
+                <input type="password" name="password" placeholder="password"/>
+                <button type="submit">login</button>
+                <p class="message">Not registered? <a href="/signup">Create an account</a></p>
+            </form>
+        </div>
+    </div>
+</section>
+</body>
+</html>

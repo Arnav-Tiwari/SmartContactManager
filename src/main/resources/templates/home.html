@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section class="home-section">
+    <div class="home-wrapper">
+        <h1>Smart Contact Manager</h1>
+        <div th:onclick="hello()" class="home-btn">Click me</div>
+    </div>
+</section>
+</body>
+</html>

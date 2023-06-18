@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="normal/base::layout(~{::section})">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+<section class="user-dashboard">
+  <div class="register-wrapper">
+    <form action="" class="contact-form" th:object="${contact}" method="POST" enctype="multipart/form-data" th:action="@{/user/process-contact}">
+    <div class=" dimension header">Add Contact Form</div>
+    <div class=" dimension name-wrapper">
+      <div class="input-title">Your name</div>
+      <input type="text" name="name" placeholder="Enter name">
+    </div>
+    <div class=" dimension phone-wrapper">
+      <div class="input-title">Your Second Name</div>
+      <input type="text" name="secondName" placeholder="Enter Second Name">
+    </div>
+    <div class="dimension email-wrapper">
+      <div class="input-title">Your Email</div>
+      <input type="text" name="email" placeholder="Enter Email">
+    </div>
+    <div class=" dimension phone-wrapper">
+      <div class="input-title">Your Phone No.</div>
+      <input type="text" name="phone" placeholder="Enter Phone No.">
+    </div>
+    <div class=" dimension phone-wrapper">
+      <div class="input-title">Work</div>
+      <input type="text" name="work" placeholder="Work">
+    </div>
+    <div class=" dimension phone-wrapper">
+      <div class="input-title">Your Phone No.</div>
+      <input type="file" name="profileImage" placeholder="Upload Image">
+    </div>
+    <div class=" text-area">
+      <textarea placeholder="Describe yourself here..." name="description"class="t-area"></textarea>
+    </div>
+    <div class="btn-wrapper">
+      <button type="submit">Submit</button>
+      <button type="submit">Reset</button>
+    </div>
+    </form>
+  </div>
+</section>
+</body>
+</html>

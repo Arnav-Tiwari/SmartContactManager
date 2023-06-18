@@ -1,0 +1,28 @@
+.home-wrapper{
+position: absolute;
+top: 50%;
+left:50%;
+transform: translate(-50%,-50%);
+align-items:center;
+}
+
+.home-btn{
+width:5rem;
+text-align: center;
+margin: 0 auto;
+cursor: pointer;
+font-weight: 500;
+background: lightseagreen;
+padding: 0.5rem;
+border-radius: 5px;
+}
+
+.home-section{
+height: calc(100% - 3rem);
+width: 100%;
+background: url(../img/bg-image.jpg);
+background-size: cover;
+aspect-ratio: 3/2;
+color:white;
+object-fit:scale-down;
+}

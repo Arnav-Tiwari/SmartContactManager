@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.thymeleaf.org" th:replace="base::layout(~{::section})">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<section>
+    <!--    <h1>This is sign up Page</h1>-->
+
+    <div class="register-wrapper">
+        <div th:if="${session.message}" th:classappend="${session.message.type}" class="alert " role="alert">
+            <p th:text="${session.message.content}"></p>
+            <th:block th:text="${#session.removeAttribute('message')}"></th:block>
+        </div>
+        <form action="" th:action="@{/do_register}" method="post" th:object="${user }" class="reg-form">
+            <div class=" dimension header">Register Here</div>
+            <div class=" dimension name-wrapper">
+                <div class="input-title">Your name</div>
+                <!--                <div class="some-div" th:text="${user.name}"></div>-->
+                <input name="name" type="text" id="name-field" placeholder="Enter name" class="f-control">
+<!--                <p th:if="${true}" th:text="something"></p>-->
+            </div>
+            <div class="dimension email-wrapper">
+                <div class="input-title">Your Email</div>
+                <input name="email" type="text" id="input-field" placeholder="Enter Email" th:value="${user.email}">
+            </div>
+            <div class=" dimension password-wrapper">
+                <div class="input-title">Your Password</div>
+                <input name="password" type="text" id="input-field" placeholder="Enter Password ">
+            </div>
+            <div class=" text-area">
+                <textarea name="about" placeholder="Describe yourself here..." id="desc-field" class="t-area" th:value="${user.about}"></textarea>
+            </div>
+            <div class=" dimension condition-wrapper">
+                <input type="checkbox" placeholder="" name="agreement" id="agreement" >
+                <div class="input-title agreement-input">Accept terms and Conditions</div>
+            </div>
+
+            <div class="btn-wrapper">
+                <button type="submit">Submit</button>
+                <button type="submit">Reset</button>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+</html>
